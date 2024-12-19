@@ -498,9 +498,62 @@
 
   .toolkit-icons {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    position: relative;
   }
 }
 
 #w-node-_29fc235d-97aa-3d5b-727a-a5757e629ae9-4436b454 {
   grid-area: span 1 / span 1 / span 1 / span 1;
+}
+/*width*/
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/*track*/
+::-webkit-scrollbar-track {
+  background: rgb(250, 250, 250);
+  border-radius: 0px;
+}
+
+/*thumb*/
+::-webkit-scrollbar-thumb {
+  background: #315959;
+  border-radius: 0px;
+}
+
+.w-inline-block {
+  position: relative;
+}
+
+.tooltip {
+  font-family: Noto Sans Mono, sans-serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-wrap: nowrap;
+  text-transform: uppercase;
+  visibility: hidden;  /* Hidden by default */
+  width: auto;  /* Width of the tooltip */
+  background-color: #c7ef4e;  /* Background color */
+  color: #0c1820;  /* Text color */
+  text-align: center;  /* Centered text */
+  border-radius: 2px;  /* Rounded corners */
+  padding-top: 0.05rem;  /* Padding */
+  padding-bottom: 0.05rem;  /* Padding */
+  padding-left: 0.3rem;  /* Padding */
+  padding-right: 0.3rem;  /* Padding */
+  position: absolute;  /* Positioning */
+  z-index: 1;  /* On top */
+  bottom: 125%;  /* Position above the link */
+  left: 50%;  /* Center the tooltip */
+  transform: translateX(-50%);  /* Adjust for tooltip width */
+  opacity: 0;  /* Invisible */
+  transition: opacity 0.3s;  /* Fade effect */
+
+}
+
+.w-inline-block:hover .tooltip {
+  visibility: visible;  /* Show tooltip on hover */
+  opacity: 1;  /* Make it visible */
 }
