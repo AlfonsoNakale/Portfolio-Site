@@ -1,60 +1,75 @@
-# ViteJs + JS + Webflow = ❤️
+# Nuxt Minimal Starter
 
-This is a basic setup with [ViteJs](https://vitejs.dev/) that you can use for your Webflow website.
-`jQuery` is already installed and declared as an external dependency.
+Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-I'm using [Netlify](https://www.netlify.com/) to build and host my code because it's easy to use, free, and has serverless functions out of the box. Feel free to use your favorite CDN.
+## Setup
 
-**If you prefer TypeScript you can use [this template](https://github.com/armandsalle/vite-typescript-webflow)**
+Make sure to install dependencies:
 
-<br />
+```bash
+# npm
+npm install
 
-## Live demo
+# pnpm
+pnpm install
 
-You can find a simple example of a Webflow site using this setup [here](https://vite-javascript.webflow.io/). The code is hosted on Netlify [here](https://vite-javascript-webflow.netlify.app/main.js). If you want to see the Webflow preview, it's [here](https://preview.webflow.com/preview/vite-javascript?utm_medium=preview_link&utm_source=designer&utm_content=vite-javascript&preview=65fac120c82ee6a81780f5a5cd5ecc59&workflow=preview) 👍
+# yarn
+yarn install
 
-<br />
-
-## How to use with Webflow
-
-### 🇫🇷 French
-The doc is [here](https://github.com/armandsalle/vite-javascript-webflow/blob/main/HowToUse_JS_FR.md) 
-
-### 🇬🇧 English
-The doc is [here](https://github.com/armandsalle/vite-javascript-webflow/blob/main/HowToUse_JS_EN.md) 
-
-<br />
-
-## Building and running on localhost
-
-This project is using `yarn`.
-
-First, install dependencies:
-
-```sh
-yarn
+# bun
+bun install
 ```
 
-To launch a local dev server:
+## Development Server
 
-```sh
+Start the development server on `http://localhost:3000`:
+
+```bash
+# npm
+npm run dev
+
+# pnpm
+pnpm dev
+
+# yarn
 yarn dev
+
+# bun
+bun run dev
 ```
 
-To create a production build:
+## Production
 
-```sh
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm build
+
+# yarn
 yarn build
+
+# bun
+bun run build
 ```
 
-To clean the local `/dist` folder:
+Locally preview production build:
 
-```sh
-yarn clean
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
 ```
 
-To lint the code with ESLint and Prettier:
-
-```sh
-yarn lint:fix
-```
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.

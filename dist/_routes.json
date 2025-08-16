@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "include": [
+    "/*"
+  ],
+  "exclude": [
+    "/_fonts/*",
+    "/_nuxt/*",
+    "/_scripts/*",
+    "/",
+    "/_payload.json",
+    "/dump.content.sql",
+    "/favicon.svg",
+    "/robots.txt",
+    "/bio-image/bio-image_2.jpg",
+    "/bio-image/bio-image.jpg",
+    "/project-images/unlocking-user-insights-in-namibia.jpg",
+    "/projects/unlocking-user-insights-in-namibia",
+    "/__nuxt_content/content/sql_dump.txt",
+    "/projects/unlocking-user-insights-in-namibia/_payload.json"
+  ]
+}

@@ -1,8 +1,22 @@
+# Nuxt dev/build outputs
+.data
+.nuxt
+.nitro
+.cache
+
+# Node dependencies
 node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
 .DS_Store
-dist
-dist-ssr
-*.local
+.fleet
+.idea
+
+# Local env files
 .env
-.eslintcache
-yarn-error.log
+.env.*
+!.env.example
