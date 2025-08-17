@@ -1,0 +1,1 @@
+export { default } from "C:/Users/alfon/Desktop/Work/2024/Cursor apps/alfonsonakale/alfonso-portfolio/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue"
