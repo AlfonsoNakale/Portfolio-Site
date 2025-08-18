@@ -18,8 +18,8 @@
               </div>
             </div>
             <h1 class="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-semibold text-white leading-tight">Alfonso Nakale</h1>
-            <h2 class="mt-1 text-lg sm:text-xl text-slate-400">Senior Web Developer</h2>
-            <p class="mt-2 text-sm sm:text-base text-slate-400 leading-relaxed px-2 md:px-0">I build accessible, pixel-perfect digital experiences for the web.</p>
+            <h2 class="mt-1 text-lg sm:text-xl text-slate-400">Web Developer</h2>
+            <p class="mt-2 text-sm sm:text-base text-slate-400 leading-relaxed px-2 md:px-0">I build custom web apps that automate workflows, crush inefficiencies.</p>
           </div>
           <nav class="flex flex-col gap-1 text-center md:text-left">
             <NuxtLink to="#about" class="text-base sm:text-lg font-medium text-slate-400 hover:text-white transition-colors duration-200"><span class="text-xl sm:text-2xl text-emerald-400">·</span> About</NuxtLink>

@@ -10,13 +10,13 @@ export type Project = {
 
 export const projects: Project[] = [
     {
-        slug: 'unlocking-user-insights-in-namibia',
-        title: 'Unlocking User Insights in Namibia',
+        slug: 'unlocking-user-insights',
+        title: 'Unlocking User Insights',
         description: 'Why Microsoft Clarity Should Be Your Go-to Analytics Tool.',
         tech: ['Analytics', 'Microsoft Clarity', 'SEO'],
         content: 'In many Namibian businesses, websites are still treated as checkbox assets—necessary, yet under-leveraged.',
-        image: '/project-images/unlocking-user-insights-in-namibia.jpg',
-        externalUrl: 'https://clarity.microsoft.com'
+        image: '/project-images/Clarity-main-img.jpg',
+        // externalUrl: 'https://clarity.microsoft.com'
     }
 ]
 

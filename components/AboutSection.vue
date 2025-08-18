@@ -2,14 +2,15 @@
   <section id="about" class="scroll-mt-16 sm:scroll-mt-20 md:scroll-mt-24">
     <h3 class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-emerald-400">About</h3>
     <p class="mt-3 sm:mt-4 leading-relaxed text-sm sm:text-base text-slate-300 px-1 sm:px-0">
-      I'm a developer passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering. My favorite work lies at the intersection of design and development, creating experiences that not only look great but are meticulously built for performance and usability.
-Currently, I'm a Senior Front-End Engineer at Klaviyo, specializing in accessibility. I contribute to the creation and maintenance of UI components that power Klaviyo's frontend, ensuring our platform meets web accessibility standards and best practices to deliver an inclusive user experience. 
-In the past, I've had the opportunity to develop software across a variety of settings — from advertising agencies and large corporations to start-ups and small digital product studios. Additionally, I also released a comprehensive video course a few years ago, guiding learners through building a web app with the Spotify API. <br><br>
-In my spare time, I'm usually climbing, reading, hanging out with my wife and two cats, or running around Hyrule searching for Korok seeds
+      I bridge complex business logic with elegant, user-friendly interfaces. Forget cookie-cutter solutions-I build custom web applications that automate workflows, crush inefficiencies, and unlock growth, powered by modern technologies.<br><br>
+
+My work lives at the intersection of engineering and user experience, where performance, scalability, and intuitive design collide. Whether it’s a <strong>dashboard, a SaaS automation tool, or a data-driven enterprise platform</strong>, I build solutions that are as robust under the hood as they are delightful to use.<br><br>
+
+Currently, I leverage my hybrid background in banking, marketing, and informatics to develop applications that solve real-world business challenges-translating legacy processes into sleek, future-proof systems. Past projects span financial services automation, CRM integrations, and real-time analytics tools, all built with accessibility and maintainability in mind.
     </p>
     <div class="mt-4 sm:mt-6 flex items-center gap-2">
       <!--<Icon icon="ri:file-pdf-2-line" class="w-6 h-6 text-slate-400 hover:text-slate-300" />-->
-      <nuxtLink to="https://www.example.com" class="text-xs sm:text-sm text-slate-400 hover:text-slate-200 transition-colors duration-200 px-4 py-2 rounded-md border border-slate-800 hover:border-slate-700 bg-slate-900/40 cursor-pointer">→ View Full Résumé</nuxtLink>
+      <nuxtLink to="https://www.example.com" class="inline-flex items-center rounded-md border border-emerald-700 bg-emerald-600/10 px-3 py-1.5 text-xs sm:text-sm font-medium text-emerald-300 hover:bg-emerald-600/20 transition-colors duration-200">→ View Full Résumé</nuxtLink>
     </div>
   </section>
 </template>
