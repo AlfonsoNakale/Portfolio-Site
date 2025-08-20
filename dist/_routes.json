@@ -9,14 +9,16 @@
     "/_scripts/*",
     "/",
     "/_payload.json",
-    "/dump.content.sql",
     "/favicon.svg",
     "/robots.txt",
     "/bio-image/bio-image_2.jpg",
     "/bio-image/bio-image.jpg",
+    "/project-images/Clarity-main-img.jpg",
+    "/project-images/inline-img.jpg",
     "/project-images/unlocking-user-insights-in-namibia.jpg",
     "/projects/unlocking-user-insights-in-namibia",
-    "/__nuxt_content/content/sql_dump.txt",
-    "/projects/unlocking-user-insights-in-namibia/_payload.json"
+    "/api/_content/cache.1755510324040.json",
+    "/projects/unlocking-user-insights-in-namibia/_payload.json",
+    "/api/_content/query/mf0B0ne61l.1755510324040.json"
   ]
 }
