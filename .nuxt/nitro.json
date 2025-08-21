@@ -1,0 +1,17 @@
+{
+  "date": "2025-08-21T18:49:39.607Z",
+  "preset": "cloudflare-dev",
+  "framework": {
+    "name": "nuxt",
+    "version": "3.17.7"
+  },
+  "versions": {
+    "nitro": "2.12.4"
+  },
+  "dev": {
+    "pid": 42472,
+    "workerAddress": {
+      "socketPath": "\\\\.\\pipe\\nitro-worker-42472-4-3-4436.sock"
+    }
+  }
+}
