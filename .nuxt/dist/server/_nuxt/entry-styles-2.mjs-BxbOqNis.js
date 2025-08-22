@@ -1,5 +1,0 @@
-const virtual_nuxt_C_3A_2FUsers_2FAlfonso_Nakale_2FDownloads_2FDev_20Projects_2FalfonsoPortfolio_2F_nuxt_2FnuxtFontsGlobal = "";
-export {
-  virtual_nuxt_C_3A_2FUsers_2FAlfonso_Nakale_2FDownloads_2FDev_20Projects_2FalfonsoPortfolio_2F_nuxt_2FnuxtFontsGlobal as default
-};
-//# sourceMappingURL=entry-styles-2.mjs-BxbOqNis.js.map

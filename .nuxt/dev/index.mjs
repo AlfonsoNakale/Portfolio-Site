@@ -889,7 +889,7 @@ const _inlineRuntimeConfig = {
   },
   "public": {
     "nuxt-scripts": {
-      "version": "0.11.10",
+      "version": "0.11.13",
       "defaultScriptOptions": {
         "trigger": "onNuxtReady"
       }
@@ -996,7 +996,7 @@ const _inlineRuntimeConfig = {
     "serverKnownCssClasses": []
   },
   "nuxt-scripts": {
-    "version": "0.11.10"
+    "version": "0.11.13"
   },
   "content": {
     "cacheVersion": 2,

@@ -1,5 +1,0 @@
-const GreetingChip_vue_vue_type_style_index_0_scoped_0bd7e5be_lang = ".greeting-alert[data-v-0bd7e5be]{-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);background-color:#1e293bf2;border:1px solid rgba(71,85,105,.7);border-radius:.5rem;box-shadow:0 25px 50px -12px #00000040;max-width:calc(100vw - 2rem);padding:1rem;position:fixed;width:280px;z-index:9999}@media (max-width:640px){.greeting-alert[data-v-0bd7e5be]{font-size:.875rem;max-width:320px;width:calc(100vw - 2rem)}}.greeting-arrow[data-v-0bd7e5be]{border-bottom:8px solid rgba(30,41,59,.95);border-left:8px solid transparent;border-right:8px solid transparent;height:0;left:50%;position:absolute;top:-8px;transform:translate(calc(-50% + var(--arrow-offset, 0px)));width:0}@media (max-width:640px){.greeting-arrow[data-v-0bd7e5be]{left:50%;transform:translate(-50%)}.greeting-alert[data-v-0bd7e5be]{animation-duration:.2s}}";
-export {
-  GreetingChip_vue_vue_type_style_index_0_scoped_0bd7e5be_lang as default
-};
-//# sourceMappingURL=GreetingChip-styles-1.mjs-ClIBgtcN.js.map
