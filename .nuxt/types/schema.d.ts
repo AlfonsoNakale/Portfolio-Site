@@ -347,7 +347,7 @@ declare module 'nuxt/schema' {
   }
   interface PublicRuntimeConfig {
    "nuxt-scripts": {
-      version: string,
+      version: any,
 
       defaultScriptOptions: {
          trigger: string,
@@ -431,7 +431,7 @@ declare module 'nuxt/schema' {
 
       defaultLocale: any,
 
-      integrity: any,
+      integrity: number,
 
       experimental: {
          stripQueryParameters: boolean,
