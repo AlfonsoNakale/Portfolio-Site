@@ -1,16 +1,16 @@
 <template>
   <section id="about" class="scroll-mt-16 sm:scroll-mt-20 md:scroll-mt-24">
-    <h3 class="text-xs sm:text-sm font-semibold uppercase tracking-widest text-emerald-400">About</h3>
-    <p class="mt-3 sm:mt-4 leading-relaxed text-sm sm:text-base text-slate-300 px-1 sm:px-0">
-      I bridge complex business logic with elegant, user-friendly interfaces. Forget cookie-cutter solutions-I build custom web applications that automate workflows, crush inefficiencies, and unlock growth, powered by modern technologies.<br><br>
+    <p class="mt-3 sm:mt-4 leading-relaxed text-sm sm:text-base text-slate-300 px-1 sm:px-0">  
+<strong>Hi, I'm a Developer, my drive isn’t just about code. it’s about creating experiences that empower people and drive meaningful change.</strong><br><br>
+      With a hybrid background in banking, marketing, and informatics, I build web applications that connect business needs with modern digital solutions.  I understand firsthand how the right technology can simplify processes, unlock efficiency, and create real impact.<br><br>
 
-My work lives at the intersection of engineering and user experience, where performance, scalability, and intuitive design collide. Whether it’s a <strong>dashboard, a SaaS automation tool, or a data-driven enterprise platform</strong>, I build solutions that are as robust under the hood as they are delightful to use.<br><br>
+My expertise bridges <strong>web development and process automation</strong>. I’m equally at home researching and mapping system flows as I am creating intuitive user interfaces that put people first. My toolkit spans modern frameworks like <strong>Vue.js</strong> and <strong>Next.js</strong>, Content Management Systems like <strong>Webflow</strong>, <strong>WordPress</strong> and finally <strong>n8n</strong> and <strong>UiPath</strong> that bring together an automated ecosystem.<br><br>
 
-Currently, I leverage my hybrid background in banking, marketing, and informatics to develop applications that solve real-world business challenges-translating legacy processes into sleek, future-proof systems. Past projects span financial services automation, CRM integrations, and real-time analytics tools, all built with accessibility and maintainability in mind.
-    </p>
+Beyond academics, my industrial experience allows me to not only build technical solutions but also ensure they align with business goals, strategy, and long-term scalability.
+</p>
     <div class="mt-4 sm:mt-6 flex items-center gap-2">
       <!--<Icon icon="ri:file-pdf-2-line" class="w-6 h-6 text-slate-400 hover:text-slate-300" />-->
-      <nuxtLink to="https://www.example.com" class="inline-flex items-center rounded-md border border-emerald-700 bg-emerald-600/10 px-3 py-1.5 text-xs sm:text-sm font-medium text-emerald-300 hover:bg-emerald-600/20 transition-colors duration-200">→ View Full Résumé</nuxtLink>
+      <nuxtLink to="/Resume-web.pdf" class="inline-flex items-center rounded-md border border-emerald-700 bg-emerald-600/10 px-3 py-1.5 text-xs sm:text-sm font-medium text-emerald-300 hover:bg-emerald-600/20 transition-colors duration-200" target="_blank">→ View Full Résumé</nuxtLink>
     </div>
   </section>
 </template>

@@ -19,7 +19,7 @@
             </div>
             <h1 class="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-semibold text-white leading-tight">Alfonso Nakale</h1>
             <h2 class="mt-1 text-lg sm:text-xl text-slate-400">Web Developer</h2>
-            <p class="mt-2 text-sm sm:text-base text-slate-400 leading-relaxed px-2 md:px-0">I build custom web apps that automate workflows, crush inefficiencies.</p>
+            <p class="mt-2 text-sm sm:text-base text-slate-400 leading-relaxed px-2 md:px-0">I believe technology should feel effortless.</p>
           </div>
           <nav class="flex flex-col gap-1 text-center md:text-left">
             <NuxtLink to="#about" class="text-base sm:text-lg font-medium text-slate-400 hover:text-white transition-colors duration-200"><span class="text-xl sm:text-2xl text-emerald-400">·</span> About</NuxtLink>
@@ -81,18 +81,18 @@ const getGreetingMessage = () => {
   const hour = new Date().getHours()
   const messages = {
     morning: [
-      "Hope you're having a fantastic start to your day! Ready to build something amazing?",
-      "Nothing beats morning creativity and a fresh cup of coffee! What are we building today?",
-      "Early bird gets the bug-free code! Let's make some digital magic happen."
+      "Hope you're having a fantastic start to your day!",
+      "Nothing beats morning creativity and a fresh cup of coffee!",
+      "Early bird gets the worm! Let's make some digital magic happen."
     ],
     afternoon: [
       "Hope your day is going great! Time for some afternoon inspiration and maybe a stretch break?",
-      "Midday energy is perfect for tackling those exciting challenges. What caught your eye?",
-      "Afternoon is prime time for creative breakthroughs. Ready to dive into some cool projects?"
+      "Midday energy is perfect for tackling those exciting challenges.",
+      "Afternoon is prime time for creative breakthroughs."
     ],
     evening: [
       "Evening browsing? The best time for exploring new ideas and getting inspired!",
-      "Hope you're winding down nicely! Perfect time to check out some creative work.",
+      "Hope you're winding down nicely! Perfect time to check out some of mycreative work.",
       "Night owl spotted! 🦉 The most creative minds work best when the world gets quiet."
     ]
   }
