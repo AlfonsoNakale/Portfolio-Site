@@ -13,6 +13,7 @@ type HydrationStrategies = {
 type LazyComponent<T> = (T & DefineComponent<HydrationStrategies, {}, {}, {}, {}, {}, {}, { hydrated: () => void }>)
 interface _GlobalComponents {
       'AboutSection': typeof import("../components/AboutSection.vue")['default']
+    'BackToTopButton': typeof import("../components/BackToTopButton.vue")['default']
     'ExperienceSection': typeof import("../components/ExperienceSection.vue")['default']
     'Footer': typeof import("../components/Footer.vue")['default']
     'GreetingChip': typeof import("../components/GreetingChip.vue")['default']
@@ -95,6 +96,7 @@ interface _GlobalComponents {
     'NuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'NuxtRouteAnnouncer': typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']
       'LazyAboutSection': LazyComponent<typeof import("../components/AboutSection.vue")['default']>
+    'LazyBackToTopButton': LazyComponent<typeof import("../components/BackToTopButton.vue")['default']>
     'LazyExperienceSection': LazyComponent<typeof import("../components/ExperienceSection.vue")['default']>
     'LazyFooter': LazyComponent<typeof import("../components/Footer.vue")['default']>
     'LazyGreetingChip': LazyComponent<typeof import("../components/GreetingChip.vue")['default']>
@@ -183,6 +185,7 @@ declare module 'vue' {
 }
 
 export const AboutSection: typeof import("../components/AboutSection.vue")['default']
+export const BackToTopButton: typeof import("../components/BackToTopButton.vue")['default']
 export const ExperienceSection: typeof import("../components/ExperienceSection.vue")['default']
 export const Footer: typeof import("../components/Footer.vue")['default']
 export const GreetingChip: typeof import("../components/GreetingChip.vue")['default']
@@ -265,6 +268,7 @@ export const Body: typeof import("../node_modules/nuxt/dist/head/runtime/compone
 export const NuxtIsland: typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
 export const NuxtRouteAnnouncer: typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']
 export const LazyAboutSection: LazyComponent<typeof import("../components/AboutSection.vue")['default']>
+export const LazyBackToTopButton: LazyComponent<typeof import("../components/BackToTopButton.vue")['default']>
 export const LazyExperienceSection: LazyComponent<typeof import("../components/ExperienceSection.vue")['default']>
 export const LazyFooter: LazyComponent<typeof import("../components/Footer.vue")['default']>
 export const LazyGreetingChip: LazyComponent<typeof import("../components/GreetingChip.vue")['default']>
