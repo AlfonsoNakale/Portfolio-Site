@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* In Tailwind v4, @import "tailwindcss" includes preflight and utilities.
+   If you need to separate them, use:
+   @import "tailwindcss/preflight";
+   @import "tailwindcss/utilities";
+*/
 
 @layer base {
   html {
@@ -20,7 +22,7 @@
   }
   
   .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
-    color: colors.slate.300;
+    color: var(--color-slate-300);
     font-weight: 600;
     margin-top: 1.5em;
     margin-bottom: 0.5em;
@@ -33,13 +35,13 @@
   .prose h4 { font-size: 1.25em; }
   
   .prose p {
-    color: theme(colors.slate.300);
+    color: theme('colors.slate.300');
     margin-top: 1em;
     margin-bottom: 1em;
   }
   
   .prose strong {
-    color: colors.slate.300;
+    color: var(--color-slate-300);
     font-weight: 600;
   }
   
@@ -58,7 +60,7 @@
   }
   
   .prose ul li, .prose ol li {
-    color: theme(colors.slate.300);
+    color: theme('colors.slate.300');
     position: relative;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -66,20 +68,20 @@
   }
   
   .prose ul li::marker, .prose ol li::marker {
-    color: theme(colors.slate.600);
+    color: theme('colors.slate.600');
   }
   
   .prose code {
-    color: theme(colors.slate.200);
-    background-color: theme(colors.slate.900);
+    color: theme('colors.slate.200');
+    background-color: theme('colors.slate.900');
     padding: 0.125em 0.25em;
     border-radius: 0.25rem;
     font-size: 0.875em;
   }
   
   .prose pre {
-    background-color: theme(colors.slate.100);
-    color: theme(colors.slate.200);
+    background-color: theme('colors.slate.100');
+    color: theme('colors.slate.200');
     padding: 1rem;
     border-radius: 0.5rem;
     overflow-x: auto;
@@ -94,12 +96,12 @@
   }
   
   .prose a {
-    color: theme(colors.slate.300);
+    color: theme('colors.slate.300');
     text-decoration: none;
   }
 
   .prose a:hover {
-    color: theme(colors.slate.500);
+    color: theme('colors.slate.500');
   }
   
   .prose img {
@@ -110,9 +112,9 @@
   }
   
   .prose blockquote {
-    border-left: 4px solid theme(colors.slate.700);
+    border-left: 4px solid theme('colors.slate.700');
     padding-left: 1rem;
-    color: theme(colors.slate.200);
+    color: theme('colors.slate.200');
     font-style: italic;
     margin-top: 1.5em;
     margin-bottom: 1.5em;
@@ -145,4 +147,36 @@
   .mouse-glow:hover::before {
     opacity: 1;
   }
-}
+
+  /* Entrance Animations */
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes tag-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-tag-in {
+    opacity: 0;
+    animation: tag-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}

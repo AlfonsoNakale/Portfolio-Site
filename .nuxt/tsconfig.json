@@ -131,13 +131,13 @@
         "./component-meta"
       ],
       "#nuxt-component-meta/types": [
-        "./component-meta.d.ts"
+        "./component-meta"
       ],
       "#content/preview": [
-        "./content/preview.mjs"
+        "./content/preview"
       ],
       "#app-manifest": [
-        "./manifest/meta/dev.json"
+        "./manifest/meta/dev"
       ],
       "#components": [
         "./components"
