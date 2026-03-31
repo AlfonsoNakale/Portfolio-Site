@@ -4,34 +4,71 @@ declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
     '/__nuxt_error': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/handlers/renderer').default>>>>
-    }
-    '/api/_nuxt_icon/:collection': {
-      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/icon/dist/runtime/server/api').default>>>>
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/nitro-server/dist/runtime/handlers/renderer').default>>>>
     }
     '/__nuxt_island/**': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/#internal/nuxt/island-renderer').default>>>>
     }
-    '/api/_content/query/:qid/**:params': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
+    '/api/_nuxt_icon/:collection': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/icon/dist/runtime/server/api').default>>>>
     }
-    '/api/_content/query/:qid': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
+    '/__nuxt_studio/dev/content/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/dev/content/[...path]').default>>>>
     }
-    '/api/_content/query': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/query').default>>>>
+    '/__nuxt_studio/dev/public/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/dev/public/[...path]').default>>>>
     }
-    '/api/_content/cache.1763361812513.json': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/cache').default>>>>
+    '/__nuxt_studio/auth/github': {
+      'GET': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/auth/github.get').default>>>>
     }
-    '/api/_content/navigation/:qid/**:params': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
+    '/__nuxt_studio/auth/google': {
+      'GET': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/auth/google.get').default>>>>
     }
-    '/api/_content/navigation/:qid': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
+    '/__nuxt_studio/auth/gitlab': {
+      'GET': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/auth/gitlab.get').default>>>>
     }
-    '/api/_content/navigation': {
-      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/server/api/navigation').default>>>>
+    '/__nuxt_studio/auth/sso': {
+      'GET': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/auth/sso.get').default>>>>
+    }
+    '/__nuxt_studio/auth/session': {
+      'GET': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/auth/session.get').default>>>>
+      'delete': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/auth/session.delete').default>>>>
+    }
+    '/_studio': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/admin').default>>>>
+    }
+    '/__nuxt_studio/meta': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/meta').default>>>>
+    }
+    '/__nuxt_studio/ipx/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/ipx/[...path]').default>>>>
+    }
+    '/sw.js': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/sw').default>>>>
+    }
+    '/__nuxt_content/content/sql_dump.txt': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/presets/node/database-handler').default>>>>
+    }
+    '/__nuxt_content/info/sql_dump.txt': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/presets/node/database-handler').default>>>>
+    }
+    '/api/component-meta': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.get').default>>>>
+    }
+    '/api/component-meta.json': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.json.get').default>>>>
+    }
+    '/api/component-meta/:component?': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta-component.get').default>>>>
+    }
+    '/__nuxt_content/content/query': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/api/query.post').default>>>>
+    }
+    '/__nuxt_content/info/query': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/api/query.post').default>>>>
+    }
+    '/_ipx/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/image/dist/runtime/ipx').default>>>>
     }
   }
 }

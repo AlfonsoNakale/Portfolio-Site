@@ -128,9 +128,9 @@ interface MarkdownContent {
   [key: string]: unknown
 }
 
-// Use queryContent to get the markdown content for the body
+// Use queryCollection to get the markdown content for the body
 const { data: markdownContent, pending, error } = await useAsyncData(`project-content-${slug}`, () => 
-  queryContent(`/projects/${slug}`).findOne()
+  queryCollection('content').path(`/projects/${slug}`).first()
 ) as { data: Ref<MarkdownContent | null>, pending: Ref<boolean>, error: Ref<Error | null> }
 
 // Combine TypeScript data with markdown content

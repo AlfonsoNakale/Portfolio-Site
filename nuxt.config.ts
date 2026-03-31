@@ -5,12 +5,20 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  // Configure for Cloudflare Pages
   nitro: {
-    preset: 'cloudflare-pages',
     // Use generate mode for static site generation
     prerender: {
-      crawlLinks: true
+      routes: ['/'],
+      crawlLinks: true,
+    },
+  },
+
+  studio: {
+    repository: {
+      provider: 'github',
+      owner: 'AlfonsoNakale',
+      repo: 'Portfolio-Site',
+      branch: 'main'
     }
   },
 
@@ -26,10 +34,9 @@ export default defineNuxtConfig({
       nitroConfig.prerender = nitroConfig.prerender || {}
       nitroConfig.prerender.routes = nitroConfig.prerender.routes || []
       nitroConfig.prerender.routes.push(...routes)
-
-
     }
   },
+
   css: ['~/assets/css/main.css'],
   vite: {
     plugins: [tailwindcss()],
@@ -70,6 +77,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/test-utils',
-    '@nuxt/content'
+    '@nuxt/content',
+    'nuxt-studio'
   ]
 })

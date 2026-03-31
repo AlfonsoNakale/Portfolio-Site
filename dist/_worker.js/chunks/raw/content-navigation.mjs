@@ -1,2 +1,0 @@
-const t='[{"title":"Projects","_path":"/projects","children":[{"title":"Unlocking User Insights","_path":"/projects/unlocking-user-insights-in-namibia"}]}]';export{t as default};
-//# sourceMappingURL=content-navigation.mjs.map
