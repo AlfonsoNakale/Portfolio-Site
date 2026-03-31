@@ -12,6 +12,12 @@ declare module "nitropack/types" {
     '/api/_nuxt_icon/:collection': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/icon/dist/runtime/server/api').default>>>>
     }
+    '/__nuxt_studio/dev/content/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/dev/content/[...path]').default>>>>
+    }
+    '/__nuxt_studio/dev/public/**': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/dev/public/[...path]').default>>>>
+    }
     '/__nuxt_studio/auth/github': {
       'GET': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-studio/dist/module/runtime/server/routes/auth/github.get').default>>>>
     }
@@ -45,6 +51,15 @@ declare module "nitropack/types" {
     }
     '/__nuxt_content/info/sql_dump.txt': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/presets/node/database-handler').default>>>>
+    }
+    '/api/component-meta': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.get').default>>>>
+    }
+    '/api/component-meta.json': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta.json.get').default>>>>
+    }
+    '/api/component-meta/:component?': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt-component-meta/dist/runtime/server/api/component-meta-component.get').default>>>>
     }
     '/__nuxt_content/content/query': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/@nuxt/content/dist/runtime/api/query.post').default>>>>
