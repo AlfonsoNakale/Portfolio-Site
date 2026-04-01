@@ -1,10 +1,10 @@
 ---
 title: Studio by navigating file
 description: Studio by navigating file
-seo:
+navigation:
   title: Studio by navigating file
   description: Click the login button if it does not directly redirect to the OAuth app authorization page
-navigation:
+seo:
   title: Studio by navigating file
   description: Click the login button if it does not directly redirect to the OAuth app authorization page
 ---
@@ -47,4 +47,4 @@ Create a sketchnote-style infographic that explains: \[TOPIC].
 
 \- Designed for quick understanding
 
-*Focus on system architecture and data flow*
+#### *Focus on system architecture and data flow*
