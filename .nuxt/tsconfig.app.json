@@ -127,17 +127,8 @@
       "#mdc-imports": [
         "./mdc-imports"
       ],
-      "#nuxt-component-meta": [
-        "./component-meta"
-      ],
-      "#nuxt-component-meta/types": [
-        "./component-meta"
-      ],
-      "#content/preview": [
-        "./content/preview"
-      ],
       "#app-manifest": [
-        "./manifest/meta/dev"
+        "./manifest/meta/e3faeed6-c512-4f59-869d-2903e642d2d7"
       ],
       "#components": [
         "./components"
@@ -208,7 +199,7 @@
     "../node_modules/dist/runtime/server",
     "../node_modules/*.*",
     "../node_modules/dist/*.*",
-    "dev",
+    "../.output",
     "../server"
   ],
   "vueCompilerOptions": {

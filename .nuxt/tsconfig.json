@@ -127,17 +127,8 @@
       "#mdc-imports": [
         "./mdc-imports"
       ],
-      "#nuxt-component-meta": [
-        "./component-meta"
-      ],
-      "#nuxt-component-meta/types": [
-        "./component-meta"
-      ],
-      "#content/preview": [
-        "./content/preview"
-      ],
       "#app-manifest": [
-        "./manifest/meta/dev"
+        "./manifest/meta/e3faeed6-c512-4f59-869d-2903e642d2d7"
       ],
       "#components": [
         "./components"
@@ -218,7 +209,6 @@
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@nuxtjs/mdc/node_modules",
-    "../node_modules/nuxt-component-meta/node_modules",
     "../dist",
     "../.data",
     "../modules/*/runtime/server/**/*",
