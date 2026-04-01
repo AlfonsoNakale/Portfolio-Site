@@ -91,6 +91,7 @@
     "../node_modules/@nuxt/devtools/node_modules",
     "../node_modules/@nuxt/telemetry/node_modules",
     "../node_modules/@nuxtjs/mdc/node_modules",
+    "../node_modules/nuxt-component-meta/node_modules",
     "../dist",
     "../.data",
     "../modules/*/runtime/**/*",

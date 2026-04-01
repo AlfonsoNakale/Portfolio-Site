@@ -20,19 +20,23 @@
             <h1 class="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-semibold text-white leading-tight">Alfonso Nakale</h1>
             <h2 class="mt-1 text-lg sm:text-xl text-slate-400">Web Developer</h2>
             <p class="mt-2 text-sm sm:text-base text-slate-400 leading-relaxed px-2 md:px-0">I believe technology should feel effortless.</p>
+            <div class="mt-5 flex items-center gap-2">
+      <!--<Icon icon="ri:file-pdf-2-line" class="w-6 h-6 text-slate-400 hover:text-slate-300" />-->
+      <nuxtLink to="/Resume-web.pdf" class="inline-flex items-center rounded-md border border-emerald-700 bg-emerald-600/10 px-3 py-1.5 text-xs sm:text-sm font-medium text-emerald-300 hover:bg-emerald-600/20 transition-colors duration-200" target="_blank">→ View Full Résumé</nuxtLink>
+    </div>
           </div>
           <nav class="flex flex-col gap-1 text-center md:text-left">
-            <NuxtLink to="#about" class="text-base sm:text-lg font-medium text-slate-400 hover:text-white transition-colors duration-200"><span class="text-xl sm:text-2xl text-emerald-400">·</span> About</NuxtLink>
-            <NuxtLink to="#experience" class="text-base sm:text-lg font-medium text-slate-400 hover:text-white transition-colors duration-200"><span class="text-xl sm:text-2xl text-emerald-400">·</span> Experience</NuxtLink>
-            <NuxtLink to="#projects" class="text-base sm:text-lg font-medium text-slate-400 hover:text-white transition-colors duration-200"><span class="text-xl sm:text-2xl text-emerald-400">·</span> Projects</NuxtLink>
+            <NuxtLink to="#about" class="text-base sm:text-lg font-medium tracking-widest flex items-center uppercase gap-2 text-slate-400 hover:text-white transition-colors duration-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>About</NuxtLink>
+            <NuxtLink to="#projects" class="text-base sm:text-lg font-medium tracking-widest flex items-center uppercase gap-2 text-slate-400 hover:text-white transition-colors duration-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>Projects</NuxtLink>
+            <NuxtLink to="#experience" class="text-base sm:text-lg font-medium tracking-widest flex items-center uppercase gap-2 text-slate-400 hover:text-white transition-colors duration-200"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>Experience</NuxtLink>
           </nav>
         </div>
       </aside>
 
       <main class="space-y-12 md:space-y-16">
         <AboutSection />
-        <ExperienceSection />
         <ProjectsSection />
+        <ExperienceSection />
         <footer class="mt-12 md:mt-15">
             <Footer />
         </footer>

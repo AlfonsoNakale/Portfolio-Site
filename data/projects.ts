@@ -17,6 +17,14 @@ export const projects: Project[] = [
         content: 'In many Namibian businesses, websites are still treated as checkbox assets—necessary, yet under-leveraged.',
         image: '/project-images/Clarity-main-img.jpg',
         // externalUrl: 'https://clarity.microsoft.com'
+    },
+    {
+        slug: 'studio-by-navigating',
+        title: 'Studio by navigating file',
+        description: 'Studio by navigating file',
+        tech: ['Visual Design', 'Infographic', 'User Experience'],
+        content: 'Create a sketchnote-style infographic that explains: [TOPIC].',
+        image: '/project-images/unnamed-2.png'
     }
 ]
 

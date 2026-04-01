@@ -1,1 +1,1 @@
-export { default } from "/app/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue"
+export { default } from "C:/Users/Alfonso.Nakale/Downloads/Dev Projects/alfonso-portfolio/node_modules/@nuxt/image/dist/runtime/components/NuxtImg.vue"

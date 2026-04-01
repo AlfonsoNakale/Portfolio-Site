@@ -1,5 +1,9 @@
-export const checksums = {}
-export const checksumsStructure = {}
+export const checksums = {
+  "content": "v3.5.0--zbYgVOuU6rEPu4Mnmezk0txtsZALeZ3a0k80ZpkU-jI"
+}
+export const checksumsStructure = {
+  "content": "86dKNc-_V5SOALAxWDKDb2sO1Amm38e8uOIKCYEAK-Q"
+}
 
 export const tables = {
   "content": "_content_content",
@@ -15,11 +19,14 @@ export default {
       "body": "json",
       "description": "string",
       "extension": "string",
+      "externalUrl": "string",
+      "image": "string",
       "meta": "json",
       "navigation": "json",
       "path": "string",
       "seo": "json",
-      "stem": "string"
+      "stem": "string",
+      "tech": "json"
     }
   },
   "info": {

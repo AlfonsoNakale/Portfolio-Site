@@ -7,6 +7,11 @@ navigation:
 seo:
   title: Studio by navigating file
   description: Click the login button if it does not directly redirect to the OAuth app authorization page
+tech:
+  - Visual Design
+  - Infographic
+  - User Experience
+image: /project-images/unnamed-2.png
 ---
 
 # Studio by navigating file

@@ -49,9 +49,9 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
          sessionSecret: string,
 
          github: {
-            clientId: any,
+            clientId: string,
 
-            clientSecret: any,
+            clientSecret: string,
 
             instanceUrl: string,
          },
@@ -132,7 +132,7 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
   }
   interface SharedPublicRuntimeConfig {
    "nuxt-scripts": {
-      version: any,
+      version: string,
 
       defaultScriptOptions: {
          trigger: string,

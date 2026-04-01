@@ -40,7 +40,7 @@
             </li>
           </ul>
 
-          <div v-if="project.image" class="mt-4 sm:mt-6 border-1 border-slate-900 rounded-lg overflow-hidden">
+          <div v-if="project.image" class="mt-4 sm:mt-6 border border-slate-900 rounded-lg overflow-hidden">
             <img
               :src="project.image"
               :alt="project.title"
@@ -92,7 +92,7 @@
                   v-glow
                   class="mouse-glow rounded-md border border-slate-800 bg-slate-900/40 p-3 sm:p-4 transition hover:border-slate-700"
                 >
-                <img :src="otherProject.image" :alt="otherProject.title" class="w-full h-32 sm:h-40 object-cover rounded-md mb-2 sm:mb-3 border-1 border-slate-900" />
+                <img :src="otherProject.image" :alt="otherProject.title" class="w-full h-32 sm:h-40 object-cover rounded-md mb-2 sm:mb-3 border border-slate-900" />
                   <h4 class="font-semibold text-sm sm:text-base text-slate-100 leading-snug">{{ otherProject.title }}</h4>
                   <p class="mt-1 text-xs sm:text-sm text-slate-400 line-clamp-2 sm:truncate leading-relaxed">{{ otherProject.description }}</p>
                   <div class="mt-2 text-xs text-slate-500 leading-relaxed">{{ otherProject.tech.join(' · ') }}</div>
@@ -113,35 +113,45 @@
 
 <script setup lang="ts">
 
-import { getProjectBySlug, projects } from '@/data/projects'
-
 const route = useRoute()
 const slug = route.params.slug as string
 
-// Get project from TypeScript data file instead of markdown
-const projectData = getProjectBySlug(slug)
-
-interface MarkdownContent {
-  body: object
-  title?: string
-  description?: string
-  [key: string]: unknown
-}
-
-// Use queryCollection to get the markdown content for the body
-const { data: markdownContent, pending, error } = await useAsyncData(`project-content-${slug}`, () => 
+// Use queryCollection to get both metadata and content
+const { data: projectDoc, pending, error } = await useAsyncData(`project-${slug}`, () => 
   queryCollection('content').path(`/projects/${slug}`).first()
-) as { data: Ref<MarkdownContent | null>, pending: Ref<boolean>, error: Ref<Error | null> }
+)
 
-// Combine TypeScript data with markdown content
+// Fetch all projects for the "Other projects" section
+const { data: allProjectsData } = await useAsyncData('all-projects', () => 
+  queryCollection('content').all()
+)
+
+const projects = computed(() => {
+  if (!allProjectsData.value) return []
+  return allProjectsData.value
+    .filter(p => p.path.startsWith('/projects/') && p.path !== `/projects/${slug}`)
+    .map(p => {
+      const raw = p as any
+      return {
+        ...p,
+        slug: p.path.split('/').pop() || '',
+        tech: raw.tech || raw.meta?.tech || [],
+        image: raw.image || raw.meta?.image || '',
+        externalUrl: raw.externalUrl || raw.meta?.externalUrl || ''
+      }
+    })
+})
+
+// Combined current project data
 const project = computed(() => {
-  if (!projectData) return null
+  const doc = projectDoc.value as any
+  if (!doc) return null
   return {
-    ...projectData,
-    body: markdownContent.value?.body || {},
-    _path: `/projects/${slug}`,
-    _id: slug,
-    _type: 'markdown'
+    ...doc,
+    slug: slug,
+    tech: doc.tech || doc.meta?.tech || [],
+    image: doc.image || doc.meta?.image || '',
+    externalUrl: doc.externalUrl || doc.meta?.externalUrl || ''
   }
 })
 
