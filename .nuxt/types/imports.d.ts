@@ -169,6 +169,7 @@ declare global {
   const useScriptVimeoPlayer: typeof import('../../node_modules/@nuxt/scripts/dist/runtime/registry/vimeo-player').useScriptVimeoPlayer
   const useScriptXPixel: typeof import('../../node_modules/@nuxt/scripts/dist/runtime/registry/x-pixel').useScriptXPixel
   const useScriptYouTubePlayer: typeof import('../../node_modules/@nuxt/scripts/dist/runtime/registry/youtube-player').useScriptYouTubePlayer
+  const useScrollSpy: typeof import('../../composables/useScrollSpy').useScrollSpy
   const useSeoMeta: typeof import('../../node_modules/nuxt/dist/app/composables/head').useSeoMeta
   const useServerHead: typeof import('../../node_modules/nuxt/dist/app/composables/head').useServerHead
   const useServerHeadSafe: typeof import('../../node_modules/nuxt/dist/app/composables/head').useServerHeadSafe
@@ -370,6 +371,7 @@ declare module 'vue' {
     readonly useScriptVimeoPlayer: UnwrapRef<typeof import('../../node_modules/@nuxt/scripts/dist/runtime/registry/vimeo-player')['useScriptVimeoPlayer']>
     readonly useScriptXPixel: UnwrapRef<typeof import('../../node_modules/@nuxt/scripts/dist/runtime/registry/x-pixel')['useScriptXPixel']>
     readonly useScriptYouTubePlayer: UnwrapRef<typeof import('../../node_modules/@nuxt/scripts/dist/runtime/registry/youtube-player')['useScriptYouTubePlayer']>
+    readonly useScrollSpy: UnwrapRef<typeof import('../../composables/useScrollSpy')['useScrollSpy']>
     readonly useSeoMeta: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/head')['useSeoMeta']>
     readonly useServerHead: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/head')['useServerHead']>
     readonly useServerHeadSafe: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/head')['useServerHeadSafe']>

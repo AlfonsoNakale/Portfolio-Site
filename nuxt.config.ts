@@ -64,9 +64,6 @@ export default defineNuxtConfig({
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },
       ],
-      script: [
-        { src: 'https://unpkg.com/tailwindcss@^3.0/dist/tailwind.min.js', defer: true },
-      ],
     },
   },
 

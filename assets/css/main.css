@@ -10,6 +10,7 @@
   html {
     font-family: 'Urbanist', sans-serif;
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
 }
 
@@ -179,4 +180,35 @@
     opacity: 0;
     animation: tag-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-}
+
+  /* Reveal animations */
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Glassmorphism Utilities */
+  .glass {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(16, 185, 129, 0.1);
+  }
+
+  .glass-hover {
+    transition: all 0.3s ease;
+  }
+
+  .glass-hover:hover {
+    background: rgba(15, 23, 42, 0.8);
+    border-color: rgba(16, 185, 129, 0.3);
+    box-shadow: 0 0 30px -10px rgba(16, 185, 129, 0.2);
+  }
+}
+

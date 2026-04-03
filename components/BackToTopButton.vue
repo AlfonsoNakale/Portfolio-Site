@@ -3,7 +3,7 @@
     <button
       v-if="isVisible"
       @click="scrollToTop"
-      class="fixed bottom-6 right-6 bg-slate-700 hover:bg-emerald-500 text-white rounded-full p-3 shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-400"
+      class="fixed bottom-6 right-6 bg-slate-700 glass hover:bg-emerald-500/20 text-white rounded-full p-3 shadow-lg transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-400 cursor-pointer"
       aria-label="Scroll to top"
     >
       <Icon icon="ri:arrow-up-s-line" class="w-6 h-6" />

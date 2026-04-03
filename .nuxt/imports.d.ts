@@ -30,6 +30,7 @@ export { withCtx, withDirectives, withKeys, withMemo, withModifiers, withScopeId
 export { requestIdleCallback, cancelIdleCallback } from '#app/compat/idle-callback';
 export { definePageMeta, PageMeta } from '#app/composables/pages';
 export { defineLazyHydrationComponent } from '#app/composables/lazy-hydration';
+export { useScrollSpy } from '../composables/useScrollSpy';
 export { extendComponentMeta } from '../node_modules/nuxt-component-meta/dist/runtime/composables/extendComponentMeta';
 export { __getComponentMeta, useComponentMeta } from '../node_modules/nuxt-component-meta/dist/runtime/composables/useComponentMeta';
 export { useImage } from '../node_modules/@nuxt/image/dist/runtime/composables';

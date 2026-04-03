@@ -6,53 +6,56 @@
       @click="toggleGreeting"
       @mouseenter="showGreeting"
       @mouseleave="scheduleHideGreeting"
-      class="group inline-flex items-center gap-2 px-3 py-1.5 bg-slate-800/80 hover:bg-slate-700/90 border border-slate-600/50 hover:border-slate-500/70 rounded-full transition-all duration-300 cursor-pointer backdrop-blur-sm"
-      :class="{ 'ring-2 ring-emerald-400/50': isVisible }"
+      class="group inline-flex items-center gap-2 px-3 py-2 bg-slate-900 hover:bg-slate-800 border border-emerald-500/20 hover:border-emerald-500/40 rounded-full transition-all duration-500 cursor-pointer backdrop-blur-xl relative z-20 shadow-[0_10px_30px_-10px_rgba(16,185,129,0.3)]"
+      :class="{ 
+        'ring-2 ring-emerald-500/50 scale-105': isVisible,
+        'animate-pulse shadow-[0_0_25px_rgba(16,185,129,0.4)]': isNudging 
+      }"
     >
+      <div v-if="isNudging" class="absolute inset-0 rounded-full bg-emerald-400/20 animate-ping pointer-events-none"></div>
       <Icon 
-        icon="ri:hand-heart-line" 
-        class="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform duration-200" 
+        name="ri:hand-heart-line" 
+        class="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform duration-300" 
       />
-      <span class="text-xs font-medium text-slate-300 group-hover:text-white transition-colors duration-200">
-        {{ getTimeOfDay() }}
+      <span class="text-[10px] font-black text-slate-200 group-hover:text-white transition-colors duration-300 uppercase tracking-[0.15em]">
+        {{ isReturnedUser ? 'Welcome Back' : getTimeOfDay() }}
       </span>
     </button>
 
-    <!-- Greeting Alert with Arrow -->
+    <!-- Greeting Alert (Improved Positioning: expand inwards) -->
     <Transition
-      enter-active-class="transition-all duration-300 ease-out"
-      enter-from-class="opacity-0 scale-95 translate-y-2"
+      enter-active-class="transition-all duration-500 cubic-bezier(0.34, 1.56, 0.64, 1)"
+      enter-from-class="opacity-0 scale-90 -translate-y-4"
       enter-to-class="opacity-100 scale-100 translate-y-0"
-      leave-active-class="transition-all duration-200 ease-in"
+      leave-active-class="transition-all duration-300 ease-in"
       leave-from-class="opacity-100 scale-100 translate-y-0"
-      leave-to-class="opacity-0 scale-95 translate-y-2"
+      leave-to-class="opacity-0 scale-90 -translate-y-4"
     >
       <div
         v-if="isVisible"
         ref="alertRef"
         @mouseenter="cancelHideGreeting"
         @mouseleave="scheduleHideGreeting"
-        class="greeting-alert"
-        :style="alertPosition"
+        class="absolute top-[calc(100%+12px)] right-0 w-[260px] sm:w-[320px] z-50 bg-slate-900 border border-emerald-500/30 rounded-2xl p-4 sm:p-5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8),0_0_20px_rgba(16,185,129,0.1)] origin-top-right backdrop-blur-2xl"
       >
-        <!-- Arrow pointing up to chip -->
-        <div class="greeting-arrow"></div>
+        <!-- Arrow pointing up (pinned to right-ish to match chip) -->
+        <div class="absolute -top-1.5 right-6 w-3 h-3 bg-slate-900 border-t border-l border-emerald-500/30 rotate-45"></div>
         
-        <div class="flex items-start gap-3">
-          <div class="flex-shrink-0 mt-0.5">
-            <Icon 
-              :icon="getGreetingIcon()" 
-              class="w-5 h-5 text-emerald-400 animate-pulse" 
-            />
-          </div>
-          <div class="flex-1">
-            <p class="text-sm font-medium text-white mb-1">
-              {{ getGreetingTitle() }}
-            </p>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              {{ getGreetingMessage() }}
+        <div class="relative flex items-start gap-4">
+          <div class="flex-1 min-w-0">
+            <h4 class="text-sm font-black text-white mb-1.5 tracking-tight uppercase italic">
+              {{ currentTitle || getGreetingTitle() }}
+            </h4>
+            <p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed font-semibold">
+              {{ currentMessage || getGreetingMessage() }}
             </p>
           </div>
+          <button 
+            @click.stop="isVisible = false" 
+            class="text-slate-600 hover:text-white transition-colors p-1 -mt-1 -mr-1"
+            aria-label="Close"
+          >
+          </button>
         </div>
       </div>
     </Transition>
@@ -60,64 +63,23 @@
 </template>
 
 <script setup lang="ts">
-import { Icon } from '@iconify/vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
-// Reactive state
 const isVisible = ref(false)
+const isNudging = ref(false)
+const isReturnedUser = ref(false)
 const chipRef = ref<HTMLElement>()
 const alertRef = ref<HTMLElement>()
-const alertPosition = ref({})
-let hideTimeout: ReturnType<typeof setTimeout> | null = null
+const currentTitle = ref('')
+const currentMessage = ref('')
+let hideTimeout: any = null
+let nudgeTimeout: any = null
 
-// Calculate position for fixed positioning
-const calculateAlertPosition = () => {
-  if (!chipRef.value) return
-  
-  const chipRect = chipRef.value.getBoundingClientRect()
-  const viewportWidth = window.innerWidth
-  const viewportHeight = window.innerHeight
-  const alertWidth = 280 // max-w-xs equivalent in pixels (approx)
-  const alertHeight = 120 // estimated alert height
-  
-  // Calculate ideal position (centered below chip)
-  let top = chipRect.bottom + 12
-  let left = chipRect.left + (chipRect.width / 2)
-  
-  // Ensure alert doesn't go off screen horizontally
-  const leftBound = 16 // 1rem padding from edge
-  const rightBound = viewportWidth - alertWidth - 16
-  
-  if (left - alertWidth / 2 < leftBound) {
-    left = leftBound + alertWidth / 2
-  } else if (left + alertWidth / 2 > viewportWidth - 16) {
-    left = rightBound + alertWidth / 2
-  }
-  
-  // Ensure alert doesn't go off screen vertically
-  if (top + alertHeight > viewportHeight - 16) {
-    // Position above chip if no room below
-    top = chipRect.top - alertHeight - 12
-  }
-  
-  // Calculate arrow offset based on chip position vs alert position
-  const arrowOffset = chipRect.left + (chipRect.width / 2) - left
-  
-  alertPosition.value = {
-    position: 'fixed',
-    top: `${top}px`,
-    left: `${left}px`,
-    transform: 'translateX(-50%)',
-    zIndex: 9999,
-    '--arrow-offset': `${arrowOffset}px`
-  }
-}
-
-// Time-based greeting logic
 const getTimeOfDay = () => {
   const hour = new Date().getHours()
-  if (hour < 12) return 'Morning'
-  if (hour < 17) return 'Afternoon'
-  return 'Evening'
+  if (hour < 12) return 'Good Morning'
+  if (hour < 17) return 'Good Afternoon'
+  return 'Good Evening'
 }
 
 const getGreetingIcon = () => {
@@ -128,69 +90,35 @@ const getGreetingIcon = () => {
 }
 
 const getGreetingTitle = () => {
-  const timeOfDay = getTimeOfDay()
-  const greetings = {
-    Morning: ['Rise and Code! ☕', 'Morning, Code Warrior! 🌅', 'Good Morning! 🌤️'],
-    Afternoon: ['Afternoon! ☀️', 'Hey There! 🌞', 'Afternoon Vibes! 🌤️'],
-    Evening: ['Evening! 🌙', 'Good Evening! ✨', 'Night Owl Mode! 🦉']
-  }
-  
-  const options = greetings[timeOfDay as keyof typeof greetings]
-  return options[Math.floor(Math.random() * options.length)]
+  if (isReturnedUser.value && !currentTitle.value) return 'Welcome Back!'
+  const hour = new Date().getHours()
+  return hour < 12 ? 'Rise and Code!' : (hour < 17 ? 'Afternoon Vibes!' : 'Night Owl Mode!')
 }
 
 const getGreetingMessage = () => {
-  const hour = new Date().getHours()
-  const messages = {
-    morning: [
-      "Hope you're having a fantastic start to your day! Ready to build something amazing?",
-      "Nothing beats morning creativity and a fresh cup of coffee! What are we building today?",
-      "Early bird gets the bug-free code! Let's make some digital magic happen."
-    ],
-    afternoon: [
-      "Hope your day is going great! Time for some afternoon inspiration and maybe a stretch break?",
-      "Midday energy is perfect for tackling those exciting challenges. What caught your eye?",
-      "Afternoon is prime time for creative breakthroughs. Ready to dive into some cool projects?"
-    ],
-    evening: [
-      "Evening browsing? The best time for exploring new ideas and getting inspired!",
-      "Hope you're winding down nicely! Perfect time to check out some creative work.",
-      "Night owl spotted! 🦉 The most creative minds work best when the world gets quiet."
-    ]
+  if (isReturnedUser.value && !currentMessage.value) {
+    return "Great to see you again! Feel free to explore my latest projects and updates."
   }
-  
-  let timeKey: keyof typeof messages
-  if (hour < 12) timeKey = 'morning'
-  else if (hour < 17) timeKey = 'afternoon'
-  else timeKey = 'evening'
-  
-  const options = messages[timeKey]
-  return options[Math.floor(Math.random() * options.length)]
+  return "Thanks for stopping by! I'm Alfonso, a developer focused on building intuitive digital experiences."
 }
 
-// Interaction handlers
 const showGreeting = () => {
+  if (isNudging.value) stopNudge()
   cancelHideGreeting()
-  calculateAlertPosition()
   isVisible.value = true
 }
 
 const toggleGreeting = () => {
-  if (!isVisible.value) {
-    calculateAlertPosition()
-  }
+  if (isNudging.value) stopNudge()
   isVisible.value = !isVisible.value
-  if (isVisible.value) {
-    cancelHideGreeting()
-  } else {
-    scheduleHideGreeting()
-  }
+  if (isVisible.value) cancelHideGreeting()
+  else scheduleHideGreeting()
 }
 
 const scheduleHideGreeting = () => {
   hideTimeout = setTimeout(() => {
     isVisible.value = false
-  }, 300) // Small delay to allow moving to alert
+  }, 800) // Increased for better UX
 }
 
 const cancelHideGreeting = () => {
@@ -200,97 +128,52 @@ const cancelHideGreeting = () => {
   }
 }
 
-// Cleanup on unmount
-onUnmounted(() => {
-  if (hideTimeout) {
-    clearTimeout(hideTimeout)
-  }
-})
+const stopNudge = () => {
+  isNudging.value = false
+  if (nudgeTimeout) clearTimeout(nudgeTimeout)
+}
 
-// Click outside to close
+const triggerNudge = (title: string, message: string) => {
+  if (isVisible.value) return 
+  currentTitle.value = title
+  currentMessage.value = message
+  isNudging.value = true
+  nudgeTimeout = setTimeout(() => {
+    isNudging.value = false
+  }, 10000)
+}
+
 onMounted(() => {
-  const handleClickOutside = (event: MouseEvent) => {
-    if (
-      isVisible.value &&
-      chipRef.value &&
-      alertRef.value &&
-      !chipRef.value.contains(event.target as Node) &&
-      !alertRef.value.contains(event.target as Node)
-    ) {
+  const hasVisited = localStorage.getItem('portfolio_visited')
+  if (hasVisited) isReturnedUser.value = true
+  localStorage.setItem('portfolio_visited', 'true')
+
+  const handleClickOutside = (e: MouseEvent) => {
+    if (isVisible.value && !chipRef.value?.contains(e.target as Node) && !alertRef.value?.contains(e.target as Node)) {
       isVisible.value = false
     }
   }
 
   const handleScroll = () => {
-    if (isVisible.value) {
-      calculateAlertPosition()
+    const scrollPercent = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+    if (scrollPercent > 20 && scrollPercent < 30 && !localStorage.getItem('nudge_projects')) {
+      triggerNudge("Check out my Insights!", "Take a look at some of my recent insights below.")
+      localStorage.setItem('nudge_projects', 'true')
+    }
+    if (scrollPercent > 80 && !localStorage.getItem('nudge_footer')) {
+      triggerNudge("Let's collaborate!", "I'd love to hear about your next big idea.")
+      localStorage.setItem('nudge_footer', 'true')
     }
   }
 
-  const handleResize = () => {
-    if (isVisible.value) {
-      calculateAlertPosition()
-    }
-  }
-  
   document.addEventListener('click', handleClickOutside)
   window.addEventListener('scroll', handleScroll)
-  window.addEventListener('resize', handleResize)
-  
+
   onUnmounted(() => {
     document.removeEventListener('click', handleClickOutside)
     window.removeEventListener('scroll', handleScroll)
-    window.removeEventListener('resize', handleResize)
+    if (hideTimeout) clearTimeout(hideTimeout)
+    if (nudgeTimeout) clearTimeout(nudgeTimeout)
   })
 })
 </script>
-
-<style scoped>
-.greeting-alert {
-  position: fixed;
-  z-index: 9999;
-  padding: 1rem;
-  background-color: rgb(30 41 59 / 0.95);
-  border: 1px solid rgb(71 85 105 / 0.7);
-  border-radius: 0.5rem;
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  backdrop-filter: blur(12px);
-  width: 280px;
-  max-width: calc(100vw - 2rem);
-}
-
-@media (max-width: 640px) {
-  .greeting-alert {
-    width: calc(100vw - 2rem);
-    max-width: 320px;
-    font-size: 0.875rem;
-  }
-}
-
-.greeting-arrow {
-  position: absolute;
-  top: -8px;
-  left: 50%;
-  transform: translateX(calc(-50% + var(--arrow-offset, 0px)));
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid rgb(30 41 59 / 0.95);
-}
-
-/* Ensure arrow stays within alert bounds on mobile */
-@media (max-width: 640px) {
-  .greeting-arrow {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-}
-
-/* Animation improvements for mobile */
-@media (max-width: 640px) {
-  .greeting-alert {
-    animation-duration: 0.2s;
-  }
-}
-</style>

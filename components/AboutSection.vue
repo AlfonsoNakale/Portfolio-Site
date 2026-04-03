@@ -4,7 +4,7 @@
 
     <div class="mt-8 grid grid-cols-1 gap-3 sm:gap-5 animate-fade-in-up">
       <!-- Programming Languages -->
-      <div v-glow class="mouse-glow group relative rounded-xl border border-slate-800/50 bg-slate-900/20 p-5 sm:p-6 transition-all duration-300 hover:border-emerald-500/30 hover:bg-slate-900/40">
+      <div class="glass glass-hover rounded-xl p-5 sm:p-6">
         <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4 flex items-center gap-2">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
           Programming Languages
@@ -22,7 +22,7 @@
       </div>
       
       <!-- Libraries & Frameworks -->
-      <div v-glow class="mouse-glow group relative rounded-xl border border-slate-800/50 bg-slate-900/20 p-5 sm:p-6 transition-all duration-300 hover:border-emerald-500/30 hover:bg-slate-900/40">
+      <div class="glass glass-hover rounded-xl p-5 sm:p-6">
         <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4 flex items-center gap-2">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
           Libraries & Frameworks
@@ -40,7 +40,7 @@
       </div>
       
       <!-- Tools & Platforms -->
-      <div v-glow class="mouse-glow group relative rounded-xl border border-slate-800/50 bg-slate-900/20 p-5 sm:p-6 transition-all duration-300 hover:border-emerald-500/30 hover:bg-slate-900/40">
+      <div class="glass glass-hover rounded-xl p-5 sm:p-6">
         <h3 class="text-xs font-bold uppercase tracking-widest text-emerald-400 mb-4 flex items-center gap-2">
           <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.8)]"></span>
           Tools & Platforms
