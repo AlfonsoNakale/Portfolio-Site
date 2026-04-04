@@ -11,8 +11,8 @@
     <div class="relative mx-auto grid w-full max-w-7xl gap-8 px-6 py-12 md:grid-cols-[1.2fr_2fr] md:gap-12 md:px-12 md:py-12">
       
       <!-- Left Sidebar: Profile & Nav (STICKY CONTAINER) -->
-      <aside class="order-1 md:order-0 px-1">
-        <div class="md:sticky md:top-12 md:self-start space-y-12">
+      <aside class="md:order-0 px-1">
+        <div class="md:sticky md:top-12 md:self-start sm:space-y-12">
           <!-- Profile Card -->
           <div class="text-center md:text-left">
             <div class="relative inline-block mb-8 group">
@@ -21,7 +21,7 @@
                 id="bio-image"
                 src="/public/bio-image/bio-image_2.jpg" 
                 alt="Alfonso Nakale - Web Developer" 
-                class="relative rounded-[35%] md:rounded-[15%] w-32 h-32 sm:w-40 sm:h-40 md:w-44 md:h-44 border-4 border-slate-800 shadow-2xl transition-all duration-500 hover:scale-[1.02] grayscale-[20%] hover:grayscale-0"
+                class="relative rounded-[16%] md:rounded-[15%] w-45 h-45 sm:w-40 sm:h-40 md:w-44 md:h-44 border-4 border-slate-800 shadow-2xl transition-all duration-500 hover:scale-[1.02] grayscale-[20%] hover:grayscale-0"
               >
               <!-- Greeting chip -->
               <div class="absolute -top-3 -right-3 md:-right-5 scale-90 sm:scale-100 animate-fade-in-up">
@@ -35,7 +35,7 @@
             </h1>
             <p class="mt-3 text-lg sm:text-xl text-slate-400 font-medium">Web Developer</p>
             
-            <div class="mt-8 flex justify-center md:justify-start">
+            <div class="mt-4 flex justify-center md:justify-start">
               <NuxtLink 
                 to="/Resume-web.pdf" 
                 class="group glass relative overflow-hidden flex items-center rounded-md border border-emerald-700 bg-emerald-600/10 px-6 py-2.5 text-sm text-emerald-400 hover:bg-emerald-600/20 transition-colors duration-200"

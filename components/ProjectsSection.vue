@@ -31,7 +31,7 @@
           <h4 class="font-bold text-lg text-white group-hover:text-emerald-400 transition-colors duration-300">
             {{ project.title }}
           </h4>
-          <p class="mt-2 text-sm text-slate-400 line-clamp-2 leading-relaxed">
+          <p class="mt-2 text-sm text-slate-400 line-clamp-2 leading-relaxed truncate">
             {{ project.description }}
           </p>
           

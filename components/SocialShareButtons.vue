@@ -1,11 +1,11 @@
 <template>
   <div class="flex items-center gap-3">
-    <span class="text-xs font-medium text-slate-400">Share:</span>
+    <span class="text-xs font-medium text-slate-500">Share:</span>
     <div class="flex items-center gap-2">
       <!-- Twitter Share -->
       <button
         @click="shareOnTwitter"
-        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-800/60 hover:bg-blue-600/20 border border-slate-700 hover:border-blue-500/50 text-slate-400 hover:text-blue-400 transition-all duration-200 cursor-pointer"
+        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 text-slate-500 hover:text-blue-600 transition-all duration-200 cursor-pointer"
         title="Share on Twitter"
       >
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -16,7 +16,7 @@
       <!-- LinkedIn Share -->
       <button
         @click="shareOnLinkedIn"
-        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-800/60 hover:bg-blue-700/20 border border-slate-700 hover:border-blue-600/50 text-slate-400 hover:text-blue-500 transition-all duration-200 cursor-pointer"
+        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 hover:bg-blue-50 border border-slate-200 hover:border-blue-200 text-slate-500 hover:text-blue-700 transition-all duration-200 cursor-pointer"
         title="Share on LinkedIn"
       >
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -27,7 +27,7 @@
       <!-- Email Share -->
       <button
         @click="shareViaEmail"
-        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-800/60 hover:bg-emerald-600/20 border border-slate-700 hover:border-emerald-500/50 text-slate-400 hover:text-emerald-400 transition-all duration-200 cursor-pointer"
+        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-200 text-slate-500 hover:text-emerald-600 transition-all duration-200 cursor-pointer"
         title="Share via email"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,7 +38,7 @@
       <!-- Copy Link -->
       <button
         @click="copyLink"
-        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-800/60 hover:bg-slate-600/20 border border-slate-700 hover:border-slate-500/50 text-slate-400 hover:text-slate-200 transition-all duration-200"
+        class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 hover:border-slate-300 text-slate-500 hover:text-slate-700 transition-all duration-200"
         :title="copied ? 'Copied!' : 'Copy link'"
       >
         <svg v-if="!copied" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,5 +1,5 @@
 import _RemarkEmoji from 'remark-emoji'
-import _Highlight from 'C:/Users/Alfonso.Nakale/Downloads/Dev Projects/alfonso-portfolio/node_modules/@nuxtjs/mdc/dist/runtime/highlighter/rehype-nuxt.js'
+import _Highlight from 'C:/Users/alfon/Desktop/Work/2024/Cursor apps/alfonsonakale/alfonso-portfolio/node_modules/@nuxtjs/mdc/dist/runtime/highlighter/rehype-nuxt.js'
 
 export const remarkPlugins = {
   'remark-emoji': { instance: _RemarkEmoji },

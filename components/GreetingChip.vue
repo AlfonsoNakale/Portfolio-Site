@@ -36,17 +36,17 @@
         ref="alertRef"
         @mouseenter="cancelHideGreeting"
         @mouseleave="scheduleHideGreeting"
-        class="absolute top-[calc(100%+12px)] right-0 w-[260px] sm:w-[320px] z-50 bg-slate-900 border border-emerald-500/30 rounded-2xl p-4 sm:p-5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8),0_0_20px_rgba(16,185,129,0.1)] origin-top-right backdrop-blur-2xl"
+        class="absolute top-[calc(100%+12px)] right-0 w-[280px] sm:w-[320px] z-50 bg-slate-900 border border-emerald-500/30 rounded-2xl p-4 sm:p-5 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8),0_0_20px_rgba(16,185,129,0.1)] origin-top-right backdrop-blur-2xl"
       >
         <!-- Arrow pointing up (pinned to right-ish to match chip) -->
         <div class="absolute -top-1.5 right-6 w-3 h-3 bg-slate-900 border-t border-l border-emerald-500/30 rotate-45"></div>
         
         <div class="relative flex items-start gap-4">
           <div class="flex-1 min-w-0">
-            <h4 class="text-sm font-black text-white mb-1.5 tracking-tight uppercase italic">
+            <h4 class="text-left text-sm font-black text-white mb-1.5 tracking-tight uppercase italic">
               {{ currentTitle || getGreetingTitle() }}
             </h4>
-            <p class="text-[11px] sm:text-xs text-slate-400 leading-relaxed font-semibold">
+            <p class="text-left text-sm sm:text-xs text-slate-400 leading-relaxed font-semibold">
               {{ currentMessage || getGreetingMessage() }}
             </p>
           </div>

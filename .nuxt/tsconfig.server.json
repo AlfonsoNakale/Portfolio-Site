@@ -71,6 +71,9 @@
       "ofetch": [
         "../node_modules/ofetch"
       ],
+      "crossws": [
+        "../node_modules/crossws"
+      ],
       "#content/components": [
         "./content/components"
       ],

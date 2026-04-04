@@ -39,7 +39,7 @@ export default defineNuxtConfig({
 
   css: ['~/assets/css/main.css'],
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [tailwindcss()]
   },
 
   fonts: {
@@ -59,7 +59,7 @@ export default defineNuxtConfig({
         lang: 'en',
       },
       meta: [
-        { name: 'description', content: 'I build accessible, pixel-perfect digital experiences for the web.' },
+        { name: 'description', content: 'I build web apps that solve real business problems using modern technology.' },
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.svg' },

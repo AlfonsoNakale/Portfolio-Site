@@ -49,9 +49,9 @@ import { RuntimeConfig as UserRuntimeConfig, PublicRuntimeConfig as UserPublicRu
          sessionSecret: string,
 
          github: {
-            clientId: string,
+            clientId: any,
 
-            clientSecret: string,
+            clientSecret: any,
 
             instanceUrl: string,
          },
